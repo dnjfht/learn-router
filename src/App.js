@@ -8,14 +8,17 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+    errorElement: <p>Not Found😭</p>,
   },
   {
     path: "/videos",
     element: <Videos />,
+    errorElement: <p>Not Found😭</p>,
   },
   {
     path: "*",
     element: <NotFoundPage />,
+    errorElement: <p>Not Found😭</p>,
   },
 ]);
 // createBrowserRouter를 사용해서 router를 만들어준다.
