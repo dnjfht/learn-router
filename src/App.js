@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <p>Home</p>,
+  },
+  {
+    path: "/videos",
+    element: <p>Videos</p>,
+  },
+]);
+// createBrowserRouter를 사용해서 router를 만들어준다.
+// 여기 라우터의 각각 경로를 설명할 수 있는 배열을 전달.
+// router를 만들었으면 우산을 씌워줘야 한다. => RouterProvider => router는 위에서 정의한 router를 쓸 거라고 명시.
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
