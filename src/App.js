@@ -1,14 +1,21 @@
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./pages/Home";
+import Videos from "./pages/Videos";
+import NotFoundPage from "./pages/NotFoundPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <p>Home</p>,
+    element: <Home />,
   },
   {
     path: "/videos",
-    element: <p>Videos</p>,
+    element: <Videos />,
+  },
+  {
+    path: "*",
+    element: <NotFoundPage />,
   },
 ]);
 // createBrowserRouter를 사용해서 router를 만들어준다.
