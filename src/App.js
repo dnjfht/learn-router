@@ -3,23 +3,23 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
 import Videos from "./pages/Videos";
 import NotFoundPage from "./pages/NotFoundPage";
+import Root from "./pages/Root";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <Root />,
     errorElement: <p>Not Found😭</p>,
+    children: [
+      { index: true, element: <Home /> },
+      { path: "/videos", element: <Videos /> },
+    ],
   },
-  {
-    path: "/videos",
-    element: <Videos />,
-    errorElement: <p>Not Found😭</p>,
-  },
-  {
-    path: "*",
-    element: <NotFoundPage />,
-    errorElement: <p>Not Found😭</p>,
-  },
+  // {
+  //   path: "/videos",
+  //   element: <Videos />,
+  //   errorElement: <p>Not Found😭</p>,
+  // },
 ]);
 // createBrowserRouter를 사용해서 router를 만들어준다.
 // 여기 라우터의 각각 경로를 설명할 수 있는 배열을 전달.
