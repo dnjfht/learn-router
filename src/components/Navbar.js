@@ -7,7 +7,10 @@ export default function Navbar() {
       <Link to="/" style={{ marginRight: 20 }}>
         Home
       </Link>
-      <Link to="/videos">Videos</Link>
+      <Link to="/videos" style={{ marginRight: 20 }}>
+        Videos
+      </Link>
+      <Link to="/videos/:videoId">VideoDetail</Link>
     </nav>
   );
 }

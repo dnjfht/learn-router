@@ -1,5 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Videos() {
-  return <div>Videos</div>;
+  const navigate = useNavigate();
+
+  const [text, setText] = useState("");
+
+  const handleChange = (e) => {
+    setText(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setText("");
+    navigate(`/videos/${text}`);
+  };
+
+  return (
+    <div>
+      <h1>Videos</h1>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="video id : "
+          value={text}
+          onChange={handleChange}
+        />
+      </form>
+    </div>
+  );
 }
